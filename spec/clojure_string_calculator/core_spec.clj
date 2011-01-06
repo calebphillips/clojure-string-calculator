@@ -15,7 +15,10 @@
               (should= 27 (add "27")))
           
           (it "returns 3 for 1,2"
-              (should= 3 (add "1,2"))))
+              (should= 3 (add "1,2")))
+          
+          (it "returns 19 for 15,4"
+              (should= 19 (add "15,4"))))
 
 
 (run-specs)
