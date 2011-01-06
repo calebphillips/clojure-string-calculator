@@ -1,13 +1,8 @@
 # clojure-string-calculator
 
-FIXME: write description
+I want to get the string calculator kata worked up in clojure.
 
-## Usage
+I am initially basing it on the solution by Tom Crayford in this video: http://vimeo.com/9350864
 
-FIXME: write
+I am using speclj instead of clojure-test.
 
-## License
-
-Copyright (C) 2010 FIXME
-
-Distributed under the Eclipse Public License, the same as Clojure.
