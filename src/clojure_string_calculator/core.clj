@@ -1,4 +1,4 @@
 (ns clojure-string-calculator.core)
 
 (defn add [s] 
-  (if (empty? s) 0 5))
+  (if (empty? s) 0 (Integer. s)))
