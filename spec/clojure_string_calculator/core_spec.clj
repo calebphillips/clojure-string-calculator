@@ -6,5 +6,8 @@
 (describe "String Calculator"
 
           (it "returns 0 for the empty string"
-              (should= 0 (add ""))))
+              (should= 0 (add "")))
+
+          (it "returns 5 for 5"
+              (should= 5 (add "5"))))
 (run-specs)
