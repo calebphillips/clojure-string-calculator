@@ -7,5 +7,5 @@
 (defn add [s] 
   (if (empty? s) 0
     (if (.contains s "\n")
-      6
+      (add-numbers (re-gsub #"\n" "," s))
       (add-numbers s))))
