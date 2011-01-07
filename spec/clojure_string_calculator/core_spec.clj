@@ -1,7 +1,8 @@
 (ns clojure-string-calculator.core-spec
   (:use
     [speclj.core]
-    [clojure-string-calculator.core]))
+    [clojure-string-calculator.core]
+    [clojure.contrib.str-utils]))
 
 (describe "String Calculator"
 
@@ -18,7 +19,13 @@
               (should= 3 (add "1,2")))
           
           (it "returns 19 for 15,4"
-              (should= 19 (add "15,4"))))
-
+              (should= 19 (add "15,4")))
+          
+          (it "returns 6 for 1,2,3"
+              (should= 6 (add "1,2,3")))
+          
+          (it "returns 2000 for 100 20s"
+              (should= 2000 (add (str-join "," (repeat 100 "20")))))
+          )
 
 (run-specs)
