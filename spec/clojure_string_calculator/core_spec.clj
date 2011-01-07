@@ -26,6 +26,9 @@
           
           (it "returns 2000 for 100 20s"
               (should= 2000 (add (str-join "," (repeat 100 "20")))))
+
+          (it "allows the newline as a delimiter"
+              (should= 6 (add "1\n2\n3")))
           )
 
 (run-specs)
