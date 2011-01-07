@@ -30,6 +30,9 @@
           (it "allows the newline as a delimiter"
               (should= 6 (add "1\n2\n3"))
               (should= 60 (add "10\n20\n30")))
+
+          (it "allows the newline and comma to be mixed"
+              (should+ 6 (add "1\n2,3")))
           )
 
 (run-specs)
