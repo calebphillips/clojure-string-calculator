@@ -3,6 +3,4 @@
 
 (defn add [s] 
   (if (empty? s) 0
-    (if (.contains s ",") 
-      (reduce + (map #(Integer. %) (re-split #"," s)))
-      (Integer. s))))
+    (reduce + (map #(Integer. %) (re-split #"," s)))))
