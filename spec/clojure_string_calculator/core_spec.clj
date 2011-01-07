@@ -35,7 +35,8 @@
               (should= 6 (add "1\n2,3")))
 
           (it "allows customer delimiters"
-              (should= 6 (add "//;\n1;2;3")))
+              (should= 6 (add "//;\n1;2;3"))
+              (should= 13 (add "//$\n3$4$6")))
           )
 
 (run-specs)
