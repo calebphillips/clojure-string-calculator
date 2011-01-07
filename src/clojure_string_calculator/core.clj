@@ -9,7 +9,7 @@
 
 (defn add [s] 
   (if (empty? s) 0
-    (if (.startsWith s "//")
-      6
+    (if-let [[ _ delim the-numbers] (re-matches #"//(.*)\n(.*)" s)]
+      (add-numbers (re-gsub (re-pattern (java.util.regex.Pattern/quote delim)) "," the-numbers))
       (add-numbers s))))
       
