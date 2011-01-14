@@ -8,13 +8,16 @@
     (Integer. s)
     (catch NumberFormatException e 0)))
 
-(defn delim [s]
+(defn replace-custom [s]
   (if (.startsWith s "//")
-    (str (get s 2)) 
-    ","))
+    (replace s (str (get s 2)) ",")
+    s))
+
+(defn normalize-delims [s]
+  (replace (replace-custom s) "\n" ","))
 
 (defn parse-numbers [s]
-  (map to-i (split (replace s "\n" (delim s)) (re-pattern (delim s)))))
+  (map to-i (split (normalize-delims s) (re-pattern ","))))
 
 (defn add-numbers [s]
   (reduce + (parse-numbers s)))
