@@ -6,5 +6,5 @@
 (defn add [s] 
   (if (empty? s) 
     0
-    (reduce + (map #(Integer. %) (split s #"[,|\n]")))))
+    (reduce + (map #(Integer. %) (split s #"[^\d]")))))
       
