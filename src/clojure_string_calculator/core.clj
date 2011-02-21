@@ -5,5 +5,5 @@
 (defn add [s] 
   (if (empty? s) 
     0
-    (reduce + (map #(Integer. %) (filter #((complement empty?) %) (split s #"[^\d]"))))))
+    (reduce + (map #(Integer. %) (filter #(not (empty? %)) (split s #"[^\d]"))))))
       
