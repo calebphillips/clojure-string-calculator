@@ -1,9 +1,13 @@
 (ns clojure-string-calculator.core
-  (:use [clojure.string]))
+  (:use [clojure.string :only [split]]))
 
+(defn to-numbers [s]
+      (map #(Integer. %) (filter #(not (empty? %)) (split s #"[^\d|^-]"))))
 
 (defn add [s] 
-  (if (empty? s) 
-    0
-    (reduce + (map #(Integer. %) (filter #(not (empty? %)) (split s #"[^\d]"))))))
+      (let [numbers (to-numbers s)
+            negatives (filter neg? numbers)]
+        (if (not-empty negatives)
+          (throw (Exception. (apply str "Negatives not allowed: " (interpose ", " negatives))))
+          (reduce + numbers))))
       
