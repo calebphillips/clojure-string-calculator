@@ -1,8 +1,6 @@
 # clojure-string-calculator
 
-The intent of this project is to get the string calculator kata worked up in clojure so that I can have a quick exercise for building clojure chops.
+The intent of this project is to get the string calculator kata (http://www.osherove.com/tdd-kata-1/) worked up in clojure so that I can have a quick exercise for building clojure chops.  I found this small problem a great way to get started with a TDD kata in Ruby.
 
-Since I don't have any clojure experience, I am initially basing it on the solution by Tom Crayford in this video: http://vimeo.com/9350864.  The specs are based pretty closely on the ones from Corey Haines' ruby version of the kata.
-
-I am using speclj instead of clojure-test, because I came across it on twitter this morning, and liked how quickly I was able to grok the examples.  The integration of lein also helped me get the project set up without having to worry about layout, dependencies, etc.
+I am using speclj instead of clojure-test, because I came across it on twitter this morning, and liked how quickly I was able to grok the examples.  The integration with lein also helped me get the project set up without having to worry about layout, dependencies, etc.  I am also thinking of trying it out with other test frameworks.
 
