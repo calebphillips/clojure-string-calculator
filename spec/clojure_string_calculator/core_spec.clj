@@ -2,7 +2,7 @@
   (:use
     [speclj.core]
     [clojure-string-calculator.core]
-    [clojure.contrib.str-utils]))
+    [clojure.contrib.str-utils :only [str-join]]))
 
 (describe "String Calculator"
 
@@ -37,8 +37,10 @@
           (it "allows customer delimiters"
               (should= 6 (add "//;\n1;2;3"))
               (should= 13 (add "//~\n3~4~6")))
+
           (it "does not allow negatives"
               (should-throw (add "-1,5,7")))
+
           (it "includes the negatives in the error message"
               (should-throw Exception "Negatives not allowed: -2, -56" (add "1,-2,18,-56"))))
 
