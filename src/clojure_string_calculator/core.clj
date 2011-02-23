@@ -2,7 +2,7 @@
   (:use [clojure.string :only [split join]]))
 
 (defn to-numbers [s]
-      (map #(Integer. %) (filter #(not (empty? %)) (split s #"[^\d|^-]"))))
+      (map #(Integer. %) (filter not-empty (split s #"[^\d|^-]"))))
 
 (defn format-exception [coll]
       (Exception. (str "Negatives not allowed: " (join ", " coll))))
