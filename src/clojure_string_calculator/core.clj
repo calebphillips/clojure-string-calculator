@@ -12,4 +12,4 @@
             negatives (filter neg? numbers)]
         (if (not-empty negatives)
           (throw (format-exception negatives))
-          (reduce + numbers))))   
+          (reduce + numbers))))
