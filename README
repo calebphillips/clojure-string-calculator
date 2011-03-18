@@ -4,3 +4,5 @@ The intent of this project is to get the string calculator kata (http://www.oshe
 
 I am using speclj instead of clojure-test, because I came across it on twitter this morning, and liked how quickly I was able to grok the examples.  The integration with lein also helped me get the project set up without having to worry about layout, dependencies, etc.  I am also thinking of trying it out with other test frameworks.
 
+A screencast of me performing the kata is available here" http://www.vimeo.com/20469597
+
