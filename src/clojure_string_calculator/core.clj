@@ -1,5 +1,5 @@
 (ns clojure-string-calculator.core
-    (:use [clojure.string :only [split join]]))
+    (:use [clojure.string :only [join split]]))
 
 (defn to-numbers [s]
       (map #(Integer. %) (filter not-empty (split s #"[^\d|^-]"))))
@@ -8,8 +8,7 @@
       (Exception. (str "Negatives not allowed: " (join ", " negatives))))
 
 (defn add [s]
-      (let [numbers (to-numbers s)
-            negatives (filter neg? numbers)]
+      (let [numbers (to-numbers s) negatives (filter neg? numbers)]
         (if (not-empty negatives)
           (throw (format-exception negatives))
           (reduce + numbers))))
